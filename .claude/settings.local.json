@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(uv sync:*)",
+      "Bash(pip install:*)",
+      "Bash(python -m uv sync --extra dev)",
+      "Bash(python -m pytest --tb=short -q)",
+      "Bash(cp \"C:/Users/Liamr/Desktop/files/__init__.py\" \"C:/Users/Liamr/Desktop/SV/tests/stress/__init__.py\")",
+      "Bash(cp \"C:/Users/Liamr/Desktop/files/conftest.py\" \"C:/Users/Liamr/Desktop/SV/tests/stress/conftest.py\")",
+      "Bash(cp \"C:/Users/Liamr/Desktop/files/test_stress.py\" \"C:/Users/Liamr/Desktop/SV/tests/stress/test_stress.py\")",
+      "Bash(cp \"C:/Users/Liamr/Desktop/files/test_report.py\" \"C:/Users/Liamr/Desktop/SV/tests/stress/test_report.py\")",
+      "Bash(cp \"C:/Users/Liamr/Desktop/files/README.md\" \"C:/Users/Liamr/Desktop/SV/tests/stress/README.md\")",
+      "Bash(python -m pytest tests/unit/ tests/integration/ -v --tb=short)",
+      "Bash(python -m pytest tests/unit/ tests/integration/ --tb=short -q)",
+      "Bash(python -m pytest tests/stress/ -v -s)"
+    ]
+  }
+}

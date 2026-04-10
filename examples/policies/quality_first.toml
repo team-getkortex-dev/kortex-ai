@@ -1,0 +1,10 @@
+[policy]
+name = "quality-first"
+description = "Prefer the most capable models, cost is secondary"
+
+[policy.objective]
+minimize = "latency"
+prefer_tier = "powerful"
+
+[policy.fallback]
+strategy = "same_tier"

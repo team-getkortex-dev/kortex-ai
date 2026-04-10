@@ -1,0 +1,87 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "kortex-ai"
+version = "0.1.0"
+description = "Multi-agent AI coordination runtime with semantic caching (3500x speedup), constraint-based routing ensuring provably correct selection, self-calibrating costs, time-travel debugging with deterministic replay, automated policy optimization, and cross-provider arbitrage. Production-grade for teams scaling agent workflows."
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.11"
+authors = [
+    { name = "Liam Robinson", email = "liamr@getkortex.dev" },
+    { name = "Kaden Audin", email = "kadena@getkortex.dev" },
+]
+keywords = [
+    "ai",
+    "llm",
+    "agents",
+    "multi-agent",
+    "routing",
+    "orchestration",
+    "caching",
+    "optimization",
+    "coordination",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "redis>=5.0",
+    "aiosqlite>=0.20.0",
+    "structlog>=23.1",
+    "pydantic-settings>=2.0",
+    "httpx>=0.27.0",
+    "h2>=4.1.0",
+    "xxhash>=3.4.0",
+    "rich>=13.7.0",
+]
+
+[project.urls]
+Homepage = "https://docs.getkortex.dev"
+Repository = "https://github.com/team-getkortex-dev/kortex-ai"
+Documentation = "https://docs.getkortex.dev"
+"Bug Tracker" = "https://github.com/team-getkortex-dev/kortex-ai/issues"
+Changelog = "https://github.com/team-getkortex-dev/kortex-ai/blob/main/CHANGELOG.md"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pytest-asyncio>=0.21",
+    "pytest-cov>=4.1",
+    "ruff>=0.1",
+    "pyright>=1.1",
+    "mkdocs-material>=9.4",
+]
+otel = [
+    "opentelemetry-api>=1.20.0",
+    "opentelemetry-sdk>=1.20.0",
+]
+ml = [
+    "scikit-learn>=1.4.0",
+    "numpy>=1.26.0",
+]
+tui = [
+    "rich>=13.7.0",
+]
+
+[project.scripts]
+kortex = "kortex.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/kortex"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+markers = [
+    "stress: Full-system stress tests (run with: pytest tests/stress/ -v -s)",
+]

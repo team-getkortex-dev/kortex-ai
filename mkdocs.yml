@@ -1,0 +1,51 @@
+site_name: Kortex AI
+site_description: Production-grade multi-agent coordination runtime
+site_url: https://docs.getkortex.dev
+repo_url: https://github.com/team-getkortex-dev/kortex-ai
+repo_name: team-getkortex-dev/kortex-ai
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.instant
+    - navigation.sections
+    - navigation.expand
+    - search.suggest
+    - content.code.copy
+    - toc.follow
+
+nav:
+  - Home: index.md
+  - Quick Start: quickstart.md
+  - Concepts: concepts.md
+  - Providers: providers.md
+  - Framework Adapters: adapters.md
+  - Resilience: resilience.md
+  - Benchmarks: benchmarks.md
+  - Benchmarking: benchmarking.md
+  - Observability: observability.md
+  - CLI Reference: cli.md
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - toc:
+      permalink: true

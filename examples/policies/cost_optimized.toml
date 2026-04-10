@@ -1,0 +1,13 @@
+[policy]
+name = "cost-optimized"
+description = "Minimize cost while maintaining capability requirements"
+
+[policy.constraints]
+max_cost_usd = 0.05
+
+[policy.objective]
+minimize = "cost"
+prefer_tier = "fast"
+
+[policy.fallback]
+strategy = "next_cheapest"
